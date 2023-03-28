@@ -24,3 +24,11 @@ Aggiungere la visualizzazione di tutte le thumbnails sulla destra dell’immagin
 Al click delle frecce, oltre al cambio di immagine attiva, gestire il cambio di miniatura attiva.
 
 */
+
+let image = [
+    "./_assets/_resources/imgs/01.webp",
+    "./_assets/_resources/imgs/02.webp",
+    "./_assets/_resources/imgs/03.webp",
+    "./_assets/_resources/imgs/04.webp",
+    "./_assets/_resources/imgs/05.webp"
+];
