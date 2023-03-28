@@ -11,6 +11,11 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #fafafa;
     color: #0a0a0a;
+    user-select: none;
+}
+
+img {
+    display: block;
 }
 
 .container{

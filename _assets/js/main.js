@@ -32,3 +32,66 @@ let image = [
     "./_assets/_resources/imgs/04.webp",
     "./_assets/_resources/imgs/05.webp"
 ];
+
+const prev = document.querySelector(".handelPrev");
+const next = document.querySelector(".handelNext");
+
+next.addEventListener('click', function () {
+    let activeItem = document.querySelector('.item.active');
+    console.log(activeItem)
+
+    let itemToActive = activeItem.nextElementSibling
+    console.log(itemToActive)
+
+    if (activeItem.classList.contains('last')) {
+        itemToActive = document.querySelector('item.first');
+    }
+
+    if (itemToActive === null) {
+        itemToActive = document.querySelector('.item.first');
+    }
+
+    activeItem.classList.remove('active');
+
+    itemToActive.classList.add('active');
+})
+
+prev.addEventListener('click', function () {
+    let activeItem = document.querySelector('.item.active');
+    console.log(activeItem)
+
+    let itemToActive = activeItem.previousElementSibling
+    console.log(itemToActive)
+
+    if (activeItem.classList.contains('first')) {
+        itemToActive = document.querySelector('item.last');
+    }
+
+    if (itemToActive === null) {
+        itemToActive = document.querySelector('.item.last');
+    }
+
+    activeItem.classList.remove('active');
+
+    itemToActive.classList.add('active');
+})
+
+let currentIndex = 0;
+let slider = document.querySelector('.items');
+let carouselImages = '';
+
+for (let i = 0; i < image.length; i++) {
+    let className = i === 0 ? 'active ' : '';
+    if (i === 0) {
+        className += 'first';
+    } else if (i === image.length - 1) {
+        className += 'last';
+    }
+    carouselImages += `
+    <div class="item ${className}">
+        <img src="${image[i]}" alt="Image">
+    </div>
+    `;
+}
+
+slider.innerHTML = carouselImages;
